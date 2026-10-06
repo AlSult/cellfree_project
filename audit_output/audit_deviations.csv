@@ -1,0 +1,16 @@
+item,tiny network,paper (Table I),verdict
+carrier,3.5,3.5,same
+bandwidth (MHz),100.0,100,same
+power (dBm),46.0,46,same
+noise figure (dB),9.0,9,same
+noise density (dBm/Hz),-174.0,-174,same
+antennas per AP,16,64,DIFFERENT
+area,200 m x 200 m,1 km x 1 km,DIFFERENT
+APs,2,121 (20 federated),DIFFERENT
+users,4,100,DIFFERENT
+path loss exponent,2.0,3.8,DIFFERENT
+shadow fading,none,8 dB,DIFFERENT
+channel model,free space + Rayleigh,3GPP TR 38.901,DIFFERENT
+mobility,"straight walk, bounces",Random Waypoint,DIFFERENT
+speeds,4 to 14 km/h,3 to 60 km/h,DIFFERENT
+all episodes start from the same positions,True,100 runs with different topologies,NOTE

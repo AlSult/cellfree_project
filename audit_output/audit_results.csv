@@ -1,0 +1,39 @@
+code,group,check,result,measured,limit,margin,picture,detail
+A1,Structure,all expected arrays are in the file,PASS,,,,,18 arrays
+A2,Structure,every array has the shape the documentation promises,PASS,,,,,
+A3,Structure,no NaN or infinite value anywhere,PASS,,,,,
+A4,Structure,"data types are right (H complex, masks True/False, the rest real numbers)",PASS,,,,,
+A5,Structure,the info file documents units and the random seeds,PASS,,,,,
+A6,Structure,no two episodes are copies of each other,PASS,,,,,
+B1,Plausibility,everybody is inside the map,PASS,,,,,
+B2,Plausibility,distances are positive and not larger than the diagonal of the map,PASS,,,,,
+B3,Plausibility,path loss is between 40 and 100 dB,PASS,,,,panel 1,51.0 to 89.4 dB
+B4,Plausibility,speeds are never negative and never above the 'no interference' limit,PASS,,,,panel 2,
+B5,Plausibility,no AP ever uses more than its power budget,PASS,,,,,budget 39.8 W
+B6,Plausibility,noise floor is -85 dBm (-174 + 80 + 9),PASS,,,,,
+C1,Independent recomputation,distances recomputed from the positions,PASS,0,1e-08,1e-08,,largest difference 0.0e+00 m
+C2,Independent recomputation,path loss recomputed with the rule of thumb 32.44 + 20log10(f/MHz) + 20log10(d/km),PASS,0.00177,0.01,0.177,panel 1,largest difference 0.0018 dB
+C3,Independent recomputation,the nearest-AP rule: every user has exactly one AP and it is the closest one,PASS,,,,,
+C4n,Independent recomputation,power of every beam is budget / 4 where a beam exists (nearest rule),PASS,,,,,
+C4c,Independent recomputation,power of every beam is budget / 4 where a beam exists (cellfree rule),PASS,,,,,
+C5,Independent recomputation,"signal, interference, SINR and speed recomputed from H for all 800 snapshots",PASS,4.47e-13,1e-08,4.47e-05,panel 3,largest relative difference 4.5e-13
+C6,Independent recomputation,speed = bandwidth x log2(1 + SINR),PASS,0,1e-05,1e-11,,largest relative difference 0.0e+00
+D1,Consistency,nobody moves faster than its own speed in any second,PASS,1.93e-14,1e-09,1.93e-05,panel 4,largest step / speed = 1.000000000000
+D2,Consistency,almost all steps are exactly speed x time (the others are bounces),PASS,0.0154,0.1,0.154,panel 4,98.5% exact
+D3,Consistency,the distance to an AP can never change by more than the user walked,PASS,0,1e-09,1e-07,panel 4,largest excess 0.0e+00 m
+D4,Consistency,all episodes start where the documentation says,PASS,,,,,
+D5,Consistency,the cell-free wanted signal is never weaker than the nearest-AP one (same channel),PASS,0,1e-12,0.0001,panel 9,largest shortfall 0.0e+00
+D6,Consistency,cell-free: every AP uses exactly its whole budget,PASS,,,,,
+E1,Random part,"random part: average 0, average power 1, real and imaginary variance 0.5",PASS,0.104,1,0.104,,"mean 0.0020, power 0.999, var 0.498/0.501"
+E2,Random part,antenna powers follow the exponential law of Rayleigh fading (Kolmogorov-Smirnov test),PASS,0.00339,0.0072,0.47,panel 5,"distance 0.0034, limit 0.0072"
+E3,Random part,different antennas are independent,PASS,0.0241,0.08,0.302,panel 6,correlation -0.024
+E4,Random part,"one second and the next one are independent (a new draw every second, as documented)",PASS,0.00205,0.025,0.082,panel 6,correlation +0.002
+E5,Random part,different AP-user pairs are independent,PASS,0.00795,0.06,0.133,panel 6,correlation -0.008
+E6,Random part,average channel strength is 16 x beta (array gain),PASS,0.000672,0.02,0.0336,panel 7,0.999
+E7,Random part,channel hardening: relative randomness of the strength is 1/sqrt(16) = 0.250,PASS,0.00634,0.05,0.127,panel 7,measured 0.252
+F1,Stress tests,halving every power changes the speeds by less than 1% (noise is negligible),PASS,1.66e-05,0.01,0.00166,panel 8,0.0017%
+F2,Stress tests,renumbering the users just renumbers the results,PASS,,,,,
+F3,Stress tests,renumbering the APs changes nothing,PASS,,,,,
+F4,Stress tests,switching off the beams of one user: its speed is 0 and everybody else hears less interference,PASS,,,,,
+G1,Reproducibility,same seeds -> every array is identical to the delivered file,PASS,,,,,
+G2,Reproducibility,other seeds -> different data,PASS,,,,,
