@@ -15,6 +15,9 @@ def nearest_ap_mask(dist):
     mask[nearest, np.arange(config.N_UE)] = True
     return mask
 
+def cooperative_mask():
+    """Rule used in Step 6 (cell-free): EVERY AP serves EVERY user."""
+    return np.ones((config.N_AP, config.N_UE), dtype=bool)
 
 def equal_power_allocation(mask):
     """Every beam gets the same power: the AP's power budget divided by the
@@ -30,6 +33,6 @@ if __name__ == "__main__":
     from ue_location_generation import generate_ue_positions
     from path_loss_model import beta_from_positions
     dist, _, _ = beta_from_positions(generate_ap_positions(), generate_ue_positions())
-    mask = nearest_ap_mask(dist)
-    print("serving mask:\n", mask)
-    print("power (W):\n", equal_power_allocation(mask).round(2))
+    for name, mask in [("nearest AP", nearest_ap_mask(dist)), ("cell-free", cooperative_mask())]:
+        print(name, "- serving mask:\n", mask)
+        print("power (W):\n", equal_power_allocation(mask).round(2))
