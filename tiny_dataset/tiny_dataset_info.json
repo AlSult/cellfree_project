@@ -1,0 +1,64 @@
+{
+  "description": "tiny cell-free network, 2 APs, 4 users, free-space path loss + Rayleigh fading, MRT aiming",
+  "episodes": 10,
+  "steps": 40,
+  "n_ap": 2,
+  "n_ue": 4,
+  "n_antennas": 16,
+  "area_m": 200.0,
+  "fc_hz": 3500000000.0,
+  "c": 300000000.0,
+  "ptx_dbm": 46.0,
+  "b_hz": 100000000.0,
+  "nf_db": 9.0,
+  "n0_dbm_hz": -174.0,
+  "dt_s": 1.0,
+  "speed_min_ms": 1.0,
+  "speed_max_ms": 4.0,
+  "noise_dbm": -85.0,
+  "walk_seed0": 100,
+  "channel_seed0": 200,
+  "ue_start": [
+    [
+      60.0,
+      60.0
+    ],
+    [
+      100.0,
+      100.0
+    ],
+    [
+      140.0,
+      140.0
+    ],
+    [
+      20.0,
+      180.0
+    ]
+  ],
+  "rules": [
+    "nearest",
+    "cellfree"
+  ],
+  "units": {
+    "ap_pos": "m",
+    "pos": "m",
+    "speed": "m/s",
+    "dist": "m",
+    "beta": "linear power gain",
+    "H": "complex channel, sqrt(power gain)",
+    "power": "W",
+    "signal": "W",
+    "interference": "W",
+    "sinr": "linear ratio",
+    "rate": "Mbps"
+  },
+  "array_axes": {
+    "pos": "episode, time, user, xy",
+    "dist/beta": "episode, time, AP, user",
+    "H": "episode, time, AP, user, antenna",
+    "mask/power": "episode, time, AP, user",
+    "signal/interference/sinr/rate": "episode, time, user"
+  },
+  "channel_draw": "independent at every time step"
+}
