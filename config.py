@@ -17,3 +17,9 @@ PTX_DBM = 46.0       # power budget of one AP: 46 dBm (Table I of the paper)
 B_HZ = 100e6         # bandwidth: 100 MHz (Table I of the paper)
 NF_DB = 9.0          # noise figure of the receiver (Table I of the paper)
 N0_DBM_HZ = -174.0   # thermal noise per Hz (Table I of the paper)
+
+# ---- Step 7: users walking around ----
+N_STEPS = 40         # number of time steps (snapshots)
+DT_S = 1.0           # seconds between two snapshots
+SPEED_MIN_MS = 1.0   # slowest walking speed (m/s)
+SPEED_MAX_MS = 4.0   # fastest walking speed (m/s)
