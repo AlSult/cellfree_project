@@ -11,3 +11,9 @@ C = 3e8          # speed of light in metres per second
 # ---- Step 3: many antennas and random fluctuation ----
 N_ANTENNAS = 16  # antennas on every AP
 SEED = 0         # same seed = same "random" numbers every run
+
+# ---- Step 5: noise, interference and speed ----
+PTX_DBM = 46.0       # power budget of one AP: 46 dBm (Table I of the paper)
+B_HZ = 100e6         # bandwidth: 100 MHz (Table I of the paper)
+NF_DB = 9.0          # noise figure of the receiver (Table I of the paper)
+N0_DBM_HZ = -174.0   # thermal noise per Hz (Table I of the paper)
