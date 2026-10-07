@@ -1,0 +1,7 @@
+propagation,rule,mean_Mbps,median_Mbps,p5_Mbps,p95_Mbps,sum_per_drop_Mbps,share_below_100Mbps_pct,APs_per_user,silent_APs_pct
+"free space (alpha 2, no shadowing)",nearest AP only,401.2,368.5,181.4,718.2,8025,0.1833,1,43.95
+"free space (alpha 2, no shadowing)",clusters (L=3),392.1,396.6,239.5,536.8,7842,0.3,3.75,0
+"free space (alpha 2, no shadowing)",everyone serves everyone,353.5,362.4,235.6,430,7069,0.05,25,0
+"paper-like (alpha 3.8, shadowing 8 dB)",nearest AP only,572.6,468.7,212.2,1257,1.145e+04,0.05,1,44.63
+"paper-like (alpha 3.8, shadowing 8 dB)",clusters (L=3),411.2,413,234.1,587.9,8223,0.7667,3.75,0
+"paper-like (alpha 3.8, shadowing 8 dB)",everyone serves everyone,219.7,221.8,104,335.7,4393,4.2,25,0

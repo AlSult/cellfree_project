@@ -1,0 +1,15 @@
+propagation,L,mean_Mbps,p5_Mbps,sum_per_drop_Mbps,APs_per_user,users_not_served
+"free space (alpha 2, no shadowing)",1,376.9,53.3,7537,1.25,0
+"free space (alpha 2, no shadowing)",2,399.8,179.4,7997,2.5,0
+"free space (alpha 2, no shadowing)",3,392.1,239.5,7842,3.75,0
+"free space (alpha 2, no shadowing)",4,386.9,252.6,7738,5,0
+"free space (alpha 2, no shadowing)",6,378.6,250.4,7572,7.5,0
+"free space (alpha 2, no shadowing)",10,365.7,236.6,7313,12.5,0
+"free space (alpha 2, no shadowing)",20,353.5,235.6,7069,25,0
+"paper-like (alpha 3.8, shadowing 8 dB)",1,556.7,13.78,1.113e+04,1.25,0
+"paper-like (alpha 3.8, shadowing 8 dB)",2,454.6,160.8,9092,2.5,0
+"paper-like (alpha 3.8, shadowing 8 dB)",3,411.2,234.1,8223,3.75,0
+"paper-like (alpha 3.8, shadowing 8 dB)",4,383.2,235.2,7663,5,0
+"paper-like (alpha 3.8, shadowing 8 dB)",6,342.4,203.9,6847,7.5,0
+"paper-like (alpha 3.8, shadowing 8 dB)",10,291.2,161.6,5823,12.5,0
+"paper-like (alpha 3.8, shadowing 8 dB)",20,219.7,104,4393,25,0

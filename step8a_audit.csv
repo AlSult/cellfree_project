@@ -1,0 +1,31 @@
+code,group,check,result,detail
+A1,layout,"25 APs, each within 10 m of its grid point, neighbours at least 80 m apart",PASS,"largest shift 9.6 m, closest pair 82.1 m"
+A2,layout,users are inside the map and spread evenly (average position close to the middle),PASS,"average position (250, 250) m"
+B1,gains,on the tiny layout the new gain function gives exactly the Step 2 numbers,PASS,
+B2,gains,free-space loss agrees with the engineers' rule of thumb,PASS,largest difference 0.0018 dB
+B3,gains,with alpha = 3.8 the loss grows 38 dB for every 10 times the distance,PASS,slope 38.00 dB per decade
+B4,gains,shadowing: average 0 dB and spread 8 dB around the path loss,PASS,"average +0.06 dB, spread 7.99 dB"
+C1,rules,"nearest rule: every user has exactly one AP, and it is the closest one",PASS,
+C2,rules,cluster rule: every AP serves exactly 3 users,PASS,
+C3,rules,"cluster rule: every user is served by at least one AP, in every drop",PASS,
+C4,rules,cluster rule: on average every user hears 3.75 APs (= APs x L / users),PASS,3.75
+C5,rules,cluster rule: at least 90% of the beams go to the AP's own strongest users (the rest come from the coverage fix),PASS,100.0%
+C6,rules,everyone rule: every AP serves every user,PASS,
+C7,rules,"power: an AP that sends uses exactly its whole budget, a silent AP uses nothing (all three rules)",PASS,
+D1,recomputation,speeds and wanted signals recomputed with the audit's own loops,PASS,largest relative difference 4.6e-13
+E1,stress,halving every power changes the speeds by less than 1%,PASS,0.0003%
+E2,stress,renumbering the users only renumbers the results,PASS,3.4e-15
+E3,stress,renumbering the APs changes nothing,PASS,3.4e-15
+E4,stress,switching off the beams of one user: its speed is 0 and the others hear less interference,PASS,
+F1,random,antenna powers follow the exponential law of Rayleigh fading (Kolmogorov-Smirnov),PASS,"distance 0.0012, limit 0.0026"
+F2,random,average channel strength is 16 x beta,PASS,0.999
+F3,random,one drop and the next one are independent,PASS,correlation +0.0031
+G1,expectation,"conventional rule: the farther from its AP, the slower the user (rank correlation below -0.3)",PASS,Spearman -0.46
+G2f,expectation,clusters beat 'everyone serves everyone' in average speed (free propagation),PASS,392 against 353 Mbps
+G2p,observed pattern,clusters beat 'everyone serves everyone' in average speed (paper propagation),PASS,411 against 220 Mbps
+G3f,expectation,clusters serve the slowest 5% better than the conventional rule (free propagation),PASS,p5 240 against 181 Mbps
+G3p,observed pattern,clusters serve the slowest 5% better than the conventional rule (paper propagation),PASS,p5 234 against 212 Mbps
+G4,expectation,"the network is limited by interference, not noise (no noise: change below 1%)",PASS,0.000%
+G5f,observed pattern,"the slowest 5% do best with a few users per AP, not with 1 and not with everyone (free propagation)",PASS,"p5: L=1 53, L=3 240, L=20 236 Mbps"
+G5p,observed pattern,"the slowest 5% do best with a few users per AP, not with 1 and not with everyone (paper propagation)",PASS,"p5: L=1 14, L=3 234, L=20 104 Mbps"
+G6,expectation,running the simulation again with the same seed gives identical numbers,PASS,
