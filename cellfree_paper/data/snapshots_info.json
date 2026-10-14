@@ -1,0 +1,29 @@
+{
+  "description": "paper-size cell-free network snapshots (121 APs, 100 users, 64 antennas, paper-like propagation)",
+  "snapshots": 200,
+  "base_seed": 20261007,
+  "seed_of_snapshot_i": "numpy.random.default_rng([base_seed, i])",
+  "propagation": {
+    "alpha": 3.8,
+    "shadow_sigma_db": 8.0
+  },
+  "n_ap": 121,
+  "n_ue": 100,
+  "n_antennas": 64,
+  "area_m": 1000.0,
+  "ap_jitter_m": 10.0,
+  "layout_seed": 1,
+  "users_per_ap_L": 3,
+  "rules": [
+    "nearest AP only",
+    "clusters (L=3)",
+    "everyone serves everyone"
+  ],
+  "units": {
+    "ue_pos": "m",
+    "beta": "linear power gain",
+    "rate_*": "Mbps",
+    "cluster_users": "user numbers served by every AP, strongest first"
+  },
+  "not_stored": "the random channel H (12.4 MB per snapshot); it is recomputed from the seed when needed"
+}

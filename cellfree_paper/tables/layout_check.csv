@@ -1,0 +1,31 @@
+layout,case,mean_Mbps,p5_Mbps,sum_Mbps,jain
+"original (seed 1, 10 m)","equal, clusters L=3",596.25,391.51,59625,0.95854
+"original (seed 1, 10 m)","equal, everyone serves everyone",245.2,101.24,24520,0.88354
+"original (seed 1, 10 m)",optimized 7 slots (pf),886.07,538.95,88607,0.89854
+"original (seed 1, 10 m)",optimized 7 slots (sum),900.36,390.96,90036,0.83558
+"original (seed 1, 10 m)",optimized 3 slots (sum),869.06,295.01,86906,0.82216
+"seed 2, 10 m","equal, clusters L=3",590.82,399.72,59082,0.96056
+"seed 2, 10 m","equal, everyone serves everyone",246.03,101.74,24603,0.88886
+"seed 2, 10 m",optimized 7 slots (pf),882.66,545.53,88266,0.90055
+"seed 2, 10 m",optimized 7 slots (sum),898.18,411.21,89818,0.83402
+"seed 2, 10 m",optimized 3 slots (sum),868.3,324.26,86830,0.81685
+"seed 3, 10 m","equal, clusters L=3",594.08,407.11,59408,0.96169
+"seed 3, 10 m","equal, everyone serves everyone",245.01,99.883,24501,0.88428
+"seed 3, 10 m",optimized 7 slots (pf),876.08,544.27,87608,0.91291
+"seed 3, 10 m",optimized 7 slots (sum),890.9,385.59,89090,0.85022
+"seed 3, 10 m",optimized 3 slots (sum),860.75,332.39,86075,0.83426
+"seed 4, 10 m","equal, clusters L=3",592.34,390.13,59234,0.96095
+"seed 4, 10 m","equal, everyone serves everyone",249.02,96.082,24902,0.88834
+"seed 4, 10 m",optimized 7 slots (pf),882.34,562.92,88234,0.90738
+"seed 4, 10 m",optimized 7 slots (sum),895.88,423.3,89588,0.84188
+"seed 4, 10 m",optimized 3 slots (sum),862.08,313.42,86208,0.82364
+perfect grid (0 m),"equal, clusters L=3",592.24,407.51,59224,0.95999
+perfect grid (0 m),"equal, everyone serves everyone",245.27,94.886,24527,0.88347
+perfect grid (0 m),optimized 7 slots (pf),881.3,541.23,88130,0.91166
+perfect grid (0 m),optimized 7 slots (sum),896.34,397.58,89634,0.84408
+perfect grid (0 m),optimized 3 slots (sum),861,302.56,86100,0.82962
+big jitter (20 m),"equal, clusters L=3",598.04,397.28,59804,0.95664
+big jitter (20 m),"equal, everyone serves everyone",248.36,95.175,24836,0.88677
+big jitter (20 m),optimized 7 slots (pf),874.79,546.9,87479,0.91314
+big jitter (20 m),optimized 7 slots (sum),887.52,394.17,88752,0.85226
+big jitter (20 m),optimized 3 slots (sum),855.39,331.78,85539,0.84257

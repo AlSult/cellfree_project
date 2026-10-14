@@ -1,0 +1,15 @@
+propagation,distance_to_nearest_AP_m,users,nearest AP only_mean_Mbps,clusters (L=3)_mean_Mbps,everyone serves everyone_mean_Mbps
+"free space (alpha 2, no shadowing)",0-10,374,812.7,573.6,273.2
+"free space (alpha 2, no shadowing)",10-20,1131,680.4,560.4,415
+"free space (alpha 2, no shadowing)",20-30,1951,581.9,549.3,484.7
+"free space (alpha 2, no shadowing)",30-40,2613,511.3,539.5,515.7
+"free space (alpha 2, no shadowing)",40-50,2703,448.2,527.4,528.8
+"free space (alpha 2, no shadowing)",50-60,1100,405.1,521.2,538.6
+"free space (alpha 2, no shadowing)",60-70,128,378.5,502.2,541.6
+"paper-like (alpha 3.8, shadowing 8 dB)",0-10,378,1096,553.7,96.26
+"paper-like (alpha 3.8, shadowing 8 dB)",10-20,1133,871.1,584.8,162.8
+"paper-like (alpha 3.8, shadowing 8 dB)",20-30,1810,771.3,601.5,224.6
+"paper-like (alpha 3.8, shadowing 8 dB)",30-40,2672,699.7,600.8,265.7
+"paper-like (alpha 3.8, shadowing 8 dB)",40-50,2757,653.7,595.1,288.3
+"paper-like (alpha 3.8, shadowing 8 dB)",50-60,1110,634.7,589,306.6
+"paper-like (alpha 3.8, shadowing 8 dB)",60-70,140,646,578.7,314.8

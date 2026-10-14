@@ -1,0 +1,7 @@
+antennas,rule,mean_Mbps,p5_Mbps
+16,nearest AP only,531.8,200.2
+16,clusters (L=3),400.5,221.8
+16,everyone serves everyone,118.5,30.65
+64,nearest AP only,726.4,376.6
+64,clusters (L=3),594.2,400.4
+64,everyone serves everyone,251.7,98.59

@@ -1,0 +1,9 @@
+code,check,result,detail
+W1,"t = 0 is identical in the static and the walking network (same positions, same channel)",PASS,
+W2,in the static network the serving APs never change,PASS,
+W3,nobody walks faster than 60 km/h (largest step in one second),PASS,59.1 km/h
+W4,nobody leaves the 1 km x 1 km area,PASS,
+W5,every user walks at about the slowest allowed speed or faster on average (3 km/h; a turn at a waypoint shortens one step),PASS,slowest user 3.1 km/h
+W6,every speed is finite and positive in both networks,PASS,
+W7,"every user is served by at least one AP at every second (cluster rule, walking)",PASS,
+W8,the users on the map are the ones used in the plots,PASS,

@@ -1,0 +1,36 @@
+code,group,check,result,detail
+A1,table I,"121 APs, 100 users, 64 antennas, 1 km x 1 km, as in Table I of the paper",PASS,
+A2,table I,"carrier 3.5 GHz, bandwidth 100 MHz, power 46 dBm, noise figure 9 dB, noise density -174 dBm/Hz",PASS,
+A3,table I,paper-like propagation: exponent 3.8 and shadowing 8 dB,PASS,
+A4,layout,"each AP is within 10 m of its grid point, neighbours at least 71 m apart",PASS,"largest shift 10.0 m, closest pair 74.8 m"
+A5,layout,users are inside the map and spread evenly (average position close to the middle),PASS,"average position (501, 502) m"
+B1,rules,"nearest rule: every user has exactly one AP, the one with the largest gain",PASS,
+B2,rules,cluster rule: every AP serves exactly 3 users,PASS,
+B3,rules,"cluster rule: every one of the 100 users is served by at least one AP, in every drop",PASS,
+B4,rules,cluster rule: on average every user hears 3.63 APs (= APs x L / users),PASS,3.63
+B5,rules,cluster rule: at least 90% of the beams go to the AP's own strongest users,PASS,99.8%
+B6,rules,"everyone rule: every AP serves every user (12,100 beams)",PASS,
+B7,rules,"power: an AP that sends uses exactly its whole budget, a silent AP uses nothing (all three rules)",PASS,
+C1,rates,the fast calculation used at this size gives the same speeds as the Step 5 library,PASS,largest relative difference 4.7e-15
+C2,rates,speeds of 6 random users per drop recomputed with the audit's own loops,PASS,largest relative difference 8.2e-14
+C3,rates,"one drop (three rules, 64 antennas) takes less than 5 seconds",PASS,0.17 s
+D1a,stress,"without noise, halving every power changes the speeds by exactly nothing (only power ratios matter)",PASS,5.4e-15
+D1b,stress,"with noise, halving every power changes the speeds exactly as predicted by signal / (interference + 2 x noise)",PASS,largest difference to the prediction 5.1e-15
+D2,stress,renumbering the users only renumbers the results,PASS,2.3e-14
+D3,stress,renumbering the APs changes nothing,PASS,3.8e-15
+D4,stress,switching off the beams of one user: its speed is 0 and the others hear less interference,PASS,
+E1,random,antenna powers follow the exponential law of Rayleigh fading (Kolmogorov-Smirnov),PASS,"2,323,200 numbers, distance 0.00045, limit 0.00107"
+E2,random,average channel strength is 64 x beta,PASS,0.9999
+E3,random,channel hardening: relative randomness of the strength is 1/sqrt(64) = 0.125,PASS,measured 0.125
+E4,random,one drop and the next one are independent,PASS,correlation -0.0002
+F1f,pattern,"conventional rule: the farther from its AP, the slower the user (rank correlation below -0.3, free propagation)",PASS,Spearman -0.55
+F1p,pattern,"conventional rule: the farther from its AP, the slower the user (rank correlation below -0.3, paper propagation)",FAIL,Spearman -0.21
+F1s,pattern,"the same relation exists in both settings, even if weaker (rank correlation more than 4 standard errors below 0)",PASS,"free -0.55, paper-like -0.21, standard error about 0.010"
+F2f,pattern,clusters beat 'everyone serves everyone' in average speed (free propagation),PASS,539 against 496 Mbps
+F2p,pattern,clusters beat 'everyone serves everyone' in average speed (paper propagation),PASS,594 against 252 Mbps
+F3f,pattern,clusters serve the slowest 5% better than the conventional rule (free propagation),PASS,p5 382 against 306 Mbps
+F3p,pattern,clusters serve the slowest 5% better than the conventional rule (paper propagation),PASS,p5 400 against 377 Mbps
+F4,pattern,"the network is limited by interference, not noise (no noise: change below 1%)",PASS,0.036%
+F5,pattern,"paper-like propagation: the slowest 5% do better with L = 4 than with L = 1, with L = 7 and with L = 10",PASS,"p5: L=1 51, L=4 410, L=7 363, L=10 324 Mbps"
+F6,pattern,"with the same 16 antennas, the paper-size network gives about the same cluster speed as the middle network (within 10%)",PASS,401 against 411 Mbps
+F7,pattern,running the simulation again with the same seed gives identical numbers,PASS,
